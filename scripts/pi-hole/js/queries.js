@@ -195,6 +195,12 @@ $(function () {
           fieldtext = "Retried <br class='hidden-lg'>(ignored)";
           buttontext = "";
           break;
+        case "14":
+          colorClass = "text-green";
+          fieldtext = "OK <br class='hidden-lg'>(already forwarded)" + dnssecStatus;
+          buttontext =
+            '<button type="button" class="btn btn-default btn-sm text-red"><i class="fa fa-ban"></i> Blacklist</button>';
+          break;
         default:
           colorClass = false;
           fieldtext = "Unknown (" + parseInt(data[4], 10) + ")";
@@ -298,7 +304,7 @@ $(function () {
       { width: "36%", render: $.fn.dataTable.render.text() },
       { width: "8%", type: "ip-address", render: $.fn.dataTable.render.text() },
       { width: "14%", orderData: 4 },
-      { width: "8%", orderData: 6 },
+      { width: "8%", orderData: 5 },
       { width: "10%", orderData: 4 }
     ],
     lengthMenu: [
